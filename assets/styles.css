@@ -1,0 +1,268 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #918eaa3a;
+    font-family: "JetBrains Mono", monospace;
+    width: 100%;
+    color: #382e74;
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.general-padding{
+    padding: 50px;
+}
+
+/* Header Style */
+#header{
+    top: 0;
+    left: 0;
+    height: 50px;
+    z-index: 2;
+    position: sticky;
+    display: flex;
+    align-items: center;
+    padding: 1.25rem 3rem;
+    justify-content: space-between;
+    background-color: inherit;
+}
+
+#header a{
+    font-weight: bold;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar.active {
+    right: 0;
+}
+
+#navbar li {
+    padding: 0 1.25rem;
+    position: relative;
+}
+
+#navbar li a,
+#navbar li a i {
+    font-size: 1rem;
+    font-weight: 600;
+    transition: .5s ease-in-out;
+}
+
+#navbar li a i:hover,
+#navbar li a:hover{
+  color: #5b548a;
+}
+
+#navbar li a:hover::after,
+#navbar li a i:hover::after {
+    content: "";
+    width: 40%;
+    height: .125rem;
+    background: #5b548a;
+    position: absolute;
+    bottom: -.25rem;
+    left: 1.25rem;
+    transition:.5s ease-in-out; 
+}
+
+#header .mobile {
+    display: none;
+    align-items: center;
+}
+#navbar #close {
+    display: none;
+}
+
+/* intro section */
+section#intro{
+    height: 90vh;
+    
+}
+
+section#intro .intro{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+section#intro .intro #screenshot1,
+section#intro .intro #screenshot2{
+    height: 80vh !important;
+    width: fit-content !important;
+    margin: 0 40px;
+}
+
+section#intro .intro #screenshot1 img,
+section#intro .intro #screenshot2 img{
+    height: 70vh;
+    border-radius: 10px;
+}
+
+section#intro .intro #screenshot1 .blank-space,
+section#intro .intro #screenshot12 .blank-space{
+    height: 10vh;
+}
+
+section#intro .intro #description{
+    padding-left: 40px;
+    align-items: center;
+}
+section#intro .intro #description p{
+    margin: 20px 0 0 0;
+}
+section#intro .intro #description h2{
+    margin: 40px 0;
+}
+section#intro .intro #description h2 a{
+    border: 1px transparent;
+    background-color: #382e74;
+    color: #ffffff;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: .8s;
+}
+section#intro .intro #description h2 a:hover{
+    border: 1px solid #382e74;
+    background-color: transparent;
+    color: #382e74;
+}
+/* contact style */
+section#contact .sub-contact{
+    padding-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+section#contact .sub-contact .contact-info{
+    width: 60%;
+}
+section#contact .sub-contact .contact-info h2{
+    margin-bottom: 30px;
+}
+section#contact .sub-contact .contact-info h3{
+    margin: 16px 0 10px 0;
+    color: #382e74;
+}
+section#contact .sub-contact .contact-info p{
+    line-height: 2;
+}
+section#contact .sub-contact .contact-info p a {
+  font-size: 20px;
+}
+section#contact .sub-contact .contact-info p a:hover{
+  color: #382e74;
+  transition: .5s ease-in-out;
+}
+section#contact .sub-contact .contact-image{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section#contact .sub-contact .contact-image img{
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    border: 1px solid rgba(47, 65, 87, 0.274);
+}
+section#contact .sub-contact .contact-image img:hover{
+  transition: .5s ease-in-out;
+  border: 1px solid #5b548a;
+  box-shadow: 0 0 5px 1px #5b548a;
+}
+section#contact .year {
+    padding: 30px auto 4px;
+    margin: auto;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+/* ------------------------MEDIA QUERIES------------------------------- */
+@media screen and (max-width: 767px){
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 200px;
+        transition:.3s ease all;
+        padding: 80px 0 0 10px;
+        background-color: inherit;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+    }
+    #navbar li {
+        margin-bottom: 25px;
+    }
+    #navbar li a:hover,
+    #navbar li a i:hover {
+    opacity: .6;
+    }
+    #navbar li a:hover::after,
+    #navbar li a i:hover::after {
+    content: "";
+    width: 40%;
+    height: .125rem;
+    position: absolute;
+    bottom: -.25rem;
+    left: 1.25rem;
+    transition:.3s ease all;
+    }
+    #header .mobile {
+        display: flex;
+        align-items: center;
+    }
+    #header .mobile i {
+        font-size: 24px;
+        padding-left: 1.25rem;
+    }
+    #navbar #close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        font-weight: 700;
+    }
+    #header #lg-bag {
+        display: none;
+    }
+}
+
+
+
+@media screen and (max-width: 375px){
+    .general-padding{
+      padding: 30px;
+    }
+    #header{
+      padding: 10px 30px;
+    }
+}
